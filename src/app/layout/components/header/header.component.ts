@@ -9,8 +9,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
     public pushRightClass: string;
-    public perfil: string;
-    public usuario: string;
+    public tipo: string;
+    public nombre: string;
+    public apellido: string;
 
     constructor(private translate: TranslateService, public router: Router) {
 
@@ -27,8 +28,9 @@ export class HeaderComponent implements OnInit {
 
     ngOnInit() {
         this.pushRightClass = 'push-right';
-        this.perfil = localStorage.getItem('perfil');
-        this.usuario = localStorage.getItem('nombre');
+        this.tipo = localStorage.getItem('tipo');
+        this.nombre = localStorage.getItem('nombre');
+        this.apellido = localStorage.getItem('apellido');
     }
 
     isToggled(): boolean {

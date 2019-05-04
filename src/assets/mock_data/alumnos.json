@@ -2,67 +2,61 @@
   {
     "nombre": "Juan",
     "apellido" : "Perez",
-    "tipo": "alumno",
+    "tipo": "Alumno",
     "dni": "53632334",
-    "mail": "juanperez@gmail.com",
+    "mail": "alumno1@gmail.com",
     "provincia": "Cordoba",
     "localidad": "Alta Gracia",
     "nivelEstudio": "Secundario",
     "estadoEstudio": true,
     "nacimiento":"17/03/2003" ,
-    "contraseña":"12345678" ,
+    "contrasenia":"123" ,
     "telefono":"+54149254966",
-    "id": 1,
+    "id": 2,
     "sexo":"masculino",
-    "preguntasRealizadas": {
-      "economia": 0,
-      "arte": 0,
-      "politica": 0,
-      "tecnologia": 0
-    }
+    "preguntasEconomia": 0,
+    "preguntasArte": 0,
+    "preguntasPolitica": 0,
+    "preguntasTecnologia": 0
   },
   {
     "nombre": "Daiana",
     "apellido" : "Benitez",
-    "tipo": "alumno",
+    "tipo": "Alumno",
     "dni": "51632323",
-    "mail": "daianabenitez@alumno.com",
+    "mail": "alumno2@gmail.com",
     "provincia": "Buenos Aires",
     "localidad": "La Matanza",
     "nivelEstudio": "Secundario",
     "estadoEstudio": true,
     "nacimiento":"29/09/2004" ,
-    "contraseña":"12345678" ,
+    "contrasenia":"123" ,
     "telefono":"+54765234896",
-    "id": 2,
+    "id": 3,
     "sexo": "femenino",
-    "preguntasRealizadas": {
-      "economia": 0,
-      "arte": 0,
-      "politica": 0,
-      "tecnologia": 0
-    }
+    "preguntasEconomia": 0,
+    "preguntasArte": 0,
+    "preguntasPolitica": 0,
+    "preguntasTecnologia": 0
   },
   {
     "nombre": "Carlos",
     "apellido" : "Ramos",
-    "tipo": "alumno",
+    "tipo": "Alumno",
     "dni": "386323234",
-    "mail": "carlosramos@alumno.com",
+    "mail": "alumno3@gmail.com",
     "provincia": "Buenos Aires",
     "localidad": "Ramos Mejia",
     "nivelEstudio": "Secundario",
     "estadoEstudio": false,
     "nacimiento":"7/10/2001" ,
-    "contraseña":"12345678" ,
+    "contrasenia":"123" ,
     "telefono":"+54111234566",
-    "id": 3,
+    "id": 4,
     "sexo": "masculino",
-    "preguntasRealizadas": {
-      "economia": 0,
-      "arte": 0,
-      "politica": 0,
-      "tecnologia": 0
-    }
+    "preguntasEconomia": 0,
+    "preguntasArte": 0,
+    "preguntasPolitica": 0,
+    "preguntasTecnologia": 0
   }
 ]
