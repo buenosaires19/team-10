@@ -12,8 +12,10 @@ export class HeaderComponent implements OnInit {
     public tipo: string;
     public nombre: string;
     public apellido: string;
+    public logueado: string;
 
     constructor(private translate: TranslateService, public router: Router) {
+        this.logueado = false;
 
         this.router.events.subscribe(val => {
             if (
@@ -31,6 +33,7 @@ export class HeaderComponent implements OnInit {
         this.tipo = localStorage.getItem('tipo');
         this.nombre = localStorage.getItem('nombre');
         this.apellido = localStorage.getItem('apellido');
+        this.logueado = localStorage.getItem('isLoggedin');
     }
 
     isToggled(): boolean {
