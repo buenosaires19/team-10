@@ -14,7 +14,7 @@
     "telefono":"+54149254966",
     "id": 1,
     "sexo":"masculino",
-    "preguntasRealizadas":  {
+    "preguntasRealizadas": {
       "economia": 0,
       "arte": 0,
       "politica": 0,
@@ -58,7 +58,7 @@
     "telefono":"+54111234566",
     "id": 3,
     "sexo": "masculino",
-    "preguntasRealizadas":  {
+    "preguntasRealizadas": {
       "economia": 0,
       "arte": 0,
       "politica": 0,

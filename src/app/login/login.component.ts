@@ -25,13 +25,16 @@ export class LoginComponent implements OnInit {
         // NO FUNCIONAN LOS NGMODELS
         switch ( (<HTMLInputElement> document.getElementById('correoInput')).value ) {
             case 'admin@gmail.com':
-                localStorage.setItem('perfil', 'admin');
+                localStorage.setItem('perfil', 'Admin');
+                localStorage.setItem('nombre', 'Octavio Villegas');
                 break;
             case 'profesor@gmail.com':
-                localStorage.setItem('perfil', 'profesor');
+                localStorage.setItem('perfil', 'Profesor');
+                localStorage.setItem('nombre', 'Maximiliano Neiner');
                 break;
             default:
-                localStorage.setItem('perfil', 'alumno');
+                localStorage.setItem('perfil', 'Alumno');
+                localStorage.setItem('nombre', 'Josias Rivola');
                 break;
         }
 
