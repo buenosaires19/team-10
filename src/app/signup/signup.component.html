@@ -1,26 +1,84 @@
 <div class="login-page" [@routerTransition]>
     <div class="row justify-content-md-center">
         <div class="col-md-4">
-            <img class="user-avatar" src="assets/images/logo.png" width="150px" />
-            <h1>Sign Up Log In Junior</h1>
+            <img class="user-avatar" src="assets/images/logo.png" width="150px" style = "background-color: blanchedalmond"/>
+            <h1>Registrarse</h1>
             <form role="form">
                 <div class="form-content">
                     <div class="form-group">
-                        <input type="text" class="form-control input-underline input-lg" id="" placeholder="{{ 'Full Name' | translate }}">
+                        <input type="text" class="form-control input-underline input-lg" id="nombre" placeholder="{{ 'Nombre' | translate }}">
                     </div>
+                    <div class = "form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="apellido" placeholder="{{ 'Apellido' | translate }}">
+                    </div>
+                    <div class="form-group">
+                            <select class="form-control" id="sexo" style = "color:rgb(160, 153, 153);background-color:#212529 ">
+                            <option selected disabled>Sexo</option>
+                            <option>Femenino</option>
+                            <option>Masculino</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                            <select class="form-control" id="educacion" style = "color:rgb(160, 153, 153);background-color:#212529">
+                            <option selected disabled>Nivel de estudios</option>
+                            <option>Secundario</option>
+                            <option>Universitario</option>
+                            <option>Terciario</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                            <input type="number"  class="form-control input-underline input-lg" id="edad" placeholder="{{ 'Edad' | translate }}">
+                    </div>
+            <!--    <div class="form-group">
 
+                            <input type="date"  class="form-control input-underline input-lg" id="fecha" >
+                    </div> -->
                     <div class="form-group">
-                        <input type="text" class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}">
+                        <input type="email"  class="form-control input-underline input-lg" id="email" placeholder="{{ 'Email' | translate }}">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Repeat Password' | translate }}">
+                            <input type="number"  class="form-control input-underline input-lg" id="dni" placeholder="{{ 'DNI' | translate }}">
                     </div>
+                    <div class="form-group">
+                        <select class="form-control" id="provincia" style = "color:rgb(160, 153, 153);background-color:#212529">
+                            <option selected disabled>Provincias</option>
+                            <option>Buenos Aires</option>
+                            <option>Catamarca</option>
+                            <option>Chaco</option>
+                            <option>Chubut</option>
+                            <option>Cordoba</option>
+                            <option>Corrientes</option>
+                            <option>Entre Rios</option>
+                            <option>Formosa</option>
+                            <option>Jujuy</option>
+                            <option>La Pampa</option>
+                            <option>La Rioja</option>
+                            <option>Mendoza</option>
+                            <option>Misiones</option>
+                            <option>Neuquen</option>
+                            <option>Rio Negro</option>
+                            <option>Salta</option>
+                            <option>San Luis</option>
+                            <option>San Juan</option>
+                            <option>Santa Cruz</option>
+                            <option>Santa Fe</option>
+                            <option>Santiago Del Estero</option>
+                            <option>Tierra Del Fuego</option>
+                            <option>Tucuman</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                            <input type="number"  class="form-control input-underline input-lg" id="telefono" placeholder="{{ 'Telefono' | translate }}">
+                    </div>
+                    <div class="form-group">
+                        <input type="password"  class="form-control input-underline input-lg" id="contrasena" placeholder="{{ 'Contraseña' | translate }}">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" id="contrasena" placeholder="{{ 'Repetir Contraseña' | translate }}">
+                    </div>
+                    
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/dashboard']">{{ 'Register' | translate }}</a>&nbsp;
+                <a class="btn rounded-btn" (click)="onRegistro()" [routerLink]="['/dashboard']">{{ 'Register' | translate }}</a>&nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/login']">{{ 'Log in' | translate }}</a>
             </form>
         </div>
