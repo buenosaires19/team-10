@@ -5,8 +5,8 @@
   "pregRes": [
               {
                 "alumno": true,
-                "datos": "¿Cuanto gana un contador?-50.000 pesos",
-                "fecha": "12/4/2019"
+                "datos": "",
+                "fecha": "d/m/y"
               }],
   "publico": false,
   "positivo" : false
