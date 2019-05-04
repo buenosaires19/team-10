@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';
 
 @Component({
     selector: 'app-sidebar',
@@ -14,10 +15,14 @@ export class SidebarComponent implements OnInit {
     pushRightClass: string;
     public perfil: string;
     public usuario: string;
+    menu='';
+    chat=false;
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
     constructor(private translate: TranslateService, public router: Router) {
+        this.menu =localStorage.getItem("tipo");
+        this.chat =localStorage.getItem("preguntas") >'3' || this.menu != 'Usuario';
         this.router.events.subscribe(val => {
             if (
                 val instanceof NavigationEnd &&
@@ -64,11 +69,6 @@ export class SidebarComponent implements OnInit {
     toggleSidebar() {
         const dom: any = document.querySelector('body');
         dom.classList.toggle(this.pushRightClass);
-    }
-
-    rltAndLtr() {
-        const dom: any = document.querySelector('body');
-        dom.classList.toggle('rtl');
     }
 
     changeLang(language: string) {

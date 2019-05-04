@@ -4,15 +4,16 @@
             <i class="fa fa-fw fa-home"></i>&nbsp;
             <span>Página principal</span>
         </a>
-         <a [routerLink]="['/carreras']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/carreras']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-university"></i>&nbsp;
             <span>Info de carreras</span>
-        </a> 
+        </a>
         <a [routerLink]="['/tips']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-users"></i>&nbsp;
             <span>Tips para entrevistas</span>
         </a>
-        <a href="https://www.elegircarrera.net/test-vocacional.aspx" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a href="https://www.elegircarrera.net/test-vocacional.aspx" [routerLinkActive]="['router-link-active']"
+            class="list-group-item">
             <i class="fa fa-fw fa-bar-chart"></i>&nbsp;
             <span>Test vocacional</span>
         </a>
@@ -24,38 +25,36 @@
             <i class="fa fa-comments"></i>&nbsp;
             <span>Chat público</span>
         </a>
-        <!--<a [routerLink]="['/componentss']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-play"></i>&nbsp;
-            <span>Video</span>
-        </a>-->
-        <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pages')">
-                <i class="fa fa-user"></i>&nbsp;
-                <span>Contactar profesional</span>
-            </a>
-            <li class="nested" [class.expand]="showMenu === 'pages'">
-                <ul class="submenu">
-                    <li>
-                        <a [routerLink]="['/preguntas/privada']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-                            <i class="fa fa-fw fa-question"></i>&nbsp;
-                            <span>Preguntar</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a [routerLink]="['/chat/privada']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-                            <i class="fa fa-fw fa-wechat"></i>&nbsp;
-                            <span>Solicitar chat</span>
-                        </a>
-                    </li>
-                    <!--<li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>-->
-                </ul>
-            </li>
-        </div>
+
+        <ng-container *ngIf="menu">
+                <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i class="fa fa-user"></i>&nbsp;
+                    <span>Contactar profesional</span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a [routerLink]="['/preguntas/privada']" [routerLinkActive]="['router-link-active']"
+                                class="list-group-item">
+                                <i class="fa fa-fw fa-question"></i>&nbsp;
+                                <span>Preguntar</span>
+                            </a>
+                        </li>
+                        <ng-container *ngIf="chat">
+                            <li>
+                                <a [routerLink]="['/chat/privada']" [routerLinkActive]="['router-link-active']"
+                                    class="list-group-item">
+                                    <i class="fa fa-fw fa-wechat"></i>&nbsp;
+                                    <span>Solicitar chat</span>
+                                </a>
+                            </li>
+                        </ng-container>
+
+                    </ul>
+                </li>
+            </div>
+        </ng-container>
         <div class="header-fields">
 
             <div class="nested-menu">
