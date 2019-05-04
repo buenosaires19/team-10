@@ -6,7 +6,8 @@
   "idProfesional": 1,
   "publico": true,
   "respuesta": "50.000 pesos",
-  "positivo": true
+  "positivo": true,
+  "fecha":"12/5/19"
   },
   {
   "id":2 ,
@@ -15,7 +16,8 @@
   "idProfesional": 2,
   "publico": true,
   "respuesta": "5 años",
-  "positivo": true
+  "positivo": true,
+  "fecha":"13/1/19"
   },
   {
   "id":3 ,
@@ -24,7 +26,8 @@
   "idProfesional": 3,
   "publico": true,
   "respuesta": "3 años",
-  "positivo": true
+  "positivo": true,
+  "fecha":"2/6/19"
   },
   {
   "id":4 ,
@@ -33,7 +36,8 @@
   "idProfesional": 5,
   "publico": true,
   "respuesta": "5 años",
-  "positivo": true
+  "positivo": true,
+  "fecha":"6/7/19"
   },
   {
   "id":5 ,
@@ -42,7 +46,8 @@
   "idProfesional": 7,
   "publico": true,
   "respuesta": "5 años",
-  "positivo": true
+  "positivo": true,
+  "fecha":"6/7/19"
   },
   {
   "id":6 ,
@@ -51,7 +56,8 @@
   "idProfesional": 7,
   "publico": true,
   "respuesta": "La carrera universitaria de Licenciatura en Artes forma en las diferentes expresiones artísticas (danza, teatro, música, escultura, pintura, etcétera)",
-  "positivo": true
+  "positivo": true,
+  "fecha":"23/3/19"
   },
   {
   "id":7 ,
@@ -60,6 +66,7 @@
   "idProfesional": 2,
   "publico": true,
   "respuesta": "5 años y medio en promedio.",
-  "positivo": true
+  "positivo": true,
+  "fecha":"1/8/19"
   }
 ]
