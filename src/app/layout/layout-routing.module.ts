@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-
 const routes: Routes = [
     {
         path: '',
@@ -9,8 +8,10 @@ const routes: Routes = [
         children: [
             { path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-            { path: 'dashbores/:id', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-            { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
+            { path: 'chat/:tipo', loadChildren: './chats/chats.module#ChatsModule' },
+            { path: 'preguntas/:tipo', loadChildren: './preguntas/preguntas.module#PreguntasModule' },
+            { path: 'tips', loadChildren: './entrevista/entrevista.module#EntrevistaModule' },
+            { path: 'carreras', loadChildren: './carreras/carreras.module#CarrerasModule' },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
             { path: 'forms', loadChildren: './form/form.module#FormModule' },
             { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
