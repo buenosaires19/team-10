@@ -1,22 +1,59 @@
 [
-  {
-    "id": 1,
-    "idAlumno": 1,
-    "idProfesional": 1,
-    "pregRes": [
-      {
-        "alumno": true,
-        "datos": "Como hago para hacer un curriculum para contabilidad?",
-        "fecha": "d/m/y"
-      },
-      {
-        "alumno": false,
-        "datos": "Lo que tenes que hacer es...",
-        "fecha": "d/m/y"
-      }
+	{
+		"id": 1,
+		"idAlumno": 1,
+		"idProfesional": 1,
+		"pregRes": [
+		          {
+		            "alumno": true,
+		            "datos": "Como hago para hacer un curriculum para contabilidad?",
+		            "fecha": "12/4/2019"
+		          },
 
-    ],
-    "publico": false,
-    "positivo": false
-  }
+		          {
+		            "alumno": false,
+		            "datos": "Lo que tenes que hacer una sintesis de datos personales e historia profesional.",
+		            "fecha": "12/4/2019"
+		          },
+
+		          {
+		            "alumno": false,
+		            "datos": "A veces es útil tomar como guía algunos ejemplos de internet",
+		            "fecha": "12/4/2019"
+		          }
+		],
+		"publico": false,
+		"positivo" : false
+
+	},
+	{
+		"id": 2,
+		"idAlumno": 2,
+		"idProfesional": 6,
+		"pregRes": [
+		          {
+		            "alumno": true,
+		            "datos": "¿Cuanto tiempo lleva normalmente una carrera de ingeniería?",
+		            "fecha": "12/4/2019"
+		          },
+
+		          {
+		            "alumno": false,
+		            "datos": "Es una pregunta un relativamente controversial ya que depende de muchos factores, por ejemplo la situacion de empleo, el tiempo que se le dedique, entre otros.",
+		            "fecha": "12/4/2019"
+		          },
+		          {
+		            "alumno": true,
+		            "datos": "cual seria en le mejor de los casos?",
+		            "fecha": "13/4/2019"
+		          },
+				  {
+				 	"alumno": false,
+		            "datos": "5 años.",
+		            "fecha": "13/4/2019"
+				  }
+		],
+		"publico": false,
+		"positivo" : false
+	}
 ]

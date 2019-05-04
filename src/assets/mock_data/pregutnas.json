@@ -1,9 +1,0 @@
-[{
-  "id":1,
-  "pregunta": "¿Cuanto gana un contador?",
-  "idAlumno": 1,
-  "idProfesional": 1,
-  "publico": true,
-  "respuesta": "50.000 pesos",
-  "positivo": true
-}]
