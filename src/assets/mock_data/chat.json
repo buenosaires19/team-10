@@ -6,24 +6,22 @@
 		"pregRes": [
 		          {
 		            "alumno": true,
-		            "datos": "Como hago para hacer un curriculum para contabilidad?",
-		            "fecha": "12/4/2019"
+		            "datos": "Como hago para hacer un curriculum para contabilidad?"
 		          },
 
 		          {
 		            "alumno": false,
-		            "datos": "Lo que tenes que hacer una sintesis de datos personales e historia profesional.",
-		            "fecha": "12/4/2019"
+		            "datos": "Lo que tenes que hacer una sintesis de datos personales e historia profesional."
 		          },
 
 		          {
 		            "alumno": false,
-		            "datos": "A veces es útil tomar como guía algunos ejemplos de internet",
-		            "fecha": "12/4/2019"
+		            "datos": "A veces es útil tomar como guía algunos ejemplos de internet"
 		          }
 		],
 		"publico": false,
-		"positivo" : false
+		"positivo" : false,
+        "fecha": "12/4/2019"
 
 	},
 	{
@@ -33,27 +31,24 @@
 		"pregRes": [
 		          {
 		            "alumno": true,
-		            "datos": "¿Cuanto tiempo lleva normalmente una carrera de ingeniería?",
-		            "fecha": "12/4/2019"
+		            "datos": "¿Cuanto tiempo lleva normalmente una carrera de ingeniería?"
 		          },
 
 		          {
 		            "alumno": false,
-		            "datos": "Es una pregunta un relativamente controversial ya que depende de muchos factores, por ejemplo la situacion de empleo, el tiempo que se le dedique, entre otros.",
-		            "fecha": "12/4/2019"
+		            "datos": "Es una pregunta un relativamente controversial ya que depende de muchos factores, por ejemplo la situacion de empleo, el tiempo que se le dedique, entre otros."
 		          },
 		          {
 		            "alumno": true,
-		            "datos": "cual seria en le mejor de los casos?",
-		            "fecha": "13/4/2019"
-		          },
+		            "datos": "cual seria en le mejor de los casos?"
+				},
 				  {
 				 	"alumno": false,
-		            "datos": "5 años.",
-		            "fecha": "13/4/2019"
-				  }
+		            "datos": "5 años."
+				}
 		],
 		"publico": false,
-		"positivo" : false
+		"positivo" : false,
+        "fecha": "12/4/2019"
 	}
 ]

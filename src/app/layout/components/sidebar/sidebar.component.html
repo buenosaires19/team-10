@@ -4,23 +4,23 @@
             <i class="fa fa-fw fa-home"></i>&nbsp;
             <span>Página principal</span>
         </a>
-         <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+         <a [routerLink]="['/carreras']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-university"></i>&nbsp;
             <span>Info de carreras</span>
         </a> 
-        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/tips']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-users"></i>&nbsp;
             <span>Tips para entrevistas</span>
         </a>
-        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a href="https://www.elegircarrera.net/test-vocacional.aspx" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart"></i>&nbsp;
             <span>Test vocacional</span>
         </a>
-        <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/preguntas/publica']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-commenting"></i>&nbsp;
             <span>Preguntas públicas</span>
         </a>
-        <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/chat/publica']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-comments"></i>&nbsp;
             <span>Chat público</span>
         </a>
@@ -36,13 +36,13 @@
             <li class="nested" [class.expand]="showMenu === 'pages'">
                 <ul class="submenu">
                     <li>
-                        <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                        <a [routerLink]="['/preguntas/privada']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                             <i class="fa fa-fw fa-question"></i>&nbsp;
                             <span>Preguntar</span>
                         </a>
                     </li>
                     <li>
-                        <a [routerLink]="['/grids']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                        <a [routerLink]="['/chat/privada']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                             <i class="fa fa-fw fa-wechat"></i>&nbsp;
                             <span>Solicitar chat</span>
                         </a>
