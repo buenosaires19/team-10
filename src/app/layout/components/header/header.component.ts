@@ -12,10 +12,10 @@ export class HeaderComponent implements OnInit {
     public tipo: string;
     public nombre: string;
     public apellido: string;
-    public logueado: boolean;
+    public logueado: string;
 
     constructor(private translate: TranslateService, public router: Router) {
-        this.logueado = false;
+        this.logueado = 'false';
 
         this.router.events.subscribe(val => {
             if (
