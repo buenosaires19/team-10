@@ -16,6 +16,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '50.000 pesos',
     'positivo': true,
     'tipo': 'economia',
+    'categoria': 'Economía',
     'fecha': '12/5/19'
     },
     {
@@ -27,6 +28,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '5 años',
     'positivo': true,
     'tipo': 'economia',
+    'categoria': 'Economía',
     'fecha': '13/1/19'
     },
     {
@@ -38,6 +40,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '3 años',
     'positivo': true,
     'tipo': 'arte',
+    'categoria': 'Arte',
     'fecha': '13/1/19'
     },
     {
@@ -49,6 +52,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '5 años',
     'positivo': true,
     'tipo': 'economia',
+    'categoria': 'Economía',
     'fecha': '6/7/19'
     },
     {
@@ -60,6 +64,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '5 años',
     'positivo': true,
     'tipo': 'politica',
+    'categoria': 'Política',
     'fecha': '6/7/19'
     },
     {
@@ -71,6 +76,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': 'La carrera universitaria de Licenciatura en Artes forma en las diferentes expresiones artísticas',
     'positivo': true,
     'tipo': 'arte',
+    'categoria': 'Arte',
     'fecha': '6/7/19'
     },
     {
@@ -82,6 +88,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '5 años y medio en promedio.',
     'positivo': true,
     'tipo': 'tecnologia',
+    'categoria': 'Tecnología',
     'fecha': '6/7/19'
     }
   ];
@@ -94,6 +101,7 @@ export class PreguntasComponent implements OnInit {
   public profesional: boolean;
   public alumnoLoggueado = false;
   public perfil = ''; // profesional
+  public opcionSeleccionada: string;
 
   constructor() {
     let i = 0;
@@ -116,9 +124,15 @@ export class PreguntasComponent implements OnInit {
       this.alumnoLoggueado = true;
     }
 
+    this.opcionSeleccionada = 'todas';
   }
 
   ngOnInit() {
+  }
+
+  onChangeSelect() {
+    const select = (<HTMLSelectElement> document.getElementById('slcFiltro'));
+    this.opcionSeleccionada = select.options[select.selectedIndex].value;
   }
 
 }

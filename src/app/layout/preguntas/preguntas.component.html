@@ -7,7 +7,8 @@
             <button class="btn btn-primary" style="width: 100%;">Generar Pregunta</button>
           </div>
           <div *ngIf="!alumnoLoggueado && !profesional">
-            <select class="form-control treintaPorciento">
+            <select (change)="onChangeSelect()" id="slcFiltro" class="form-control treintaPorciento">
+              <option value="todas">Todas las categorías</option>
               <option value="economia">Economía</option>
               <option value="arte">Arte</option>
               <option value="tecnologia">Tecnología</option>
@@ -19,14 +20,15 @@
         <div class="card-body">
           <ul class="timeline">
             <ng-container *ngFor="let p of preguntas">
+              <ng-container *ngIf="p.tipo == this.opcionSeleccionada || this.opcionSeleccionada == 'todas'">
               <li [class]="p.lado">
                 <div class="timeline-badge">
                   <i [class]="p.icono"></i>
                 </div>
-                <div class="timeline-panel">
+                <div class="timeline-panel"><span class="categoria">{{p.categoria}}</span>
                   <div class="timeline-heading">
                     <h4 class="timeline-title">{{p.pregunta}}</h4>
-                    <p><small class="text-muted"><i class="fa fa-clock-o"></i>{{p.fecha}}</small></p>
+                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> {{p.fecha}}</small></p>
                     </div>
                     <div class="timeline-body" *ngIf="!profesional">
                       <p>{{p.respuesta}}</p>
@@ -65,6 +67,7 @@
                     </div>
                 </div>
               </li>
+              </ng-container>
             </ng-container>
           </ul>
         </div>
