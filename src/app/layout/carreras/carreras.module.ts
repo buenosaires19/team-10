@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { DashboardRoutingModule } from './carreras-routing.module';
+import { CarrerasRoutingModule } from './carreras-routing.module';
 import { CarrerasComponent } from './carreras.component';
 import { StatModule } from '../../shared';
 
@@ -11,11 +11,11 @@ import { StatModule } from '../../shared';
         CommonModule,
         NgbCarouselModule,
         NgbAlertModule,
-        DashboardRoutingModule,
+        CarrerasRoutingModule,
         StatModule
     ],
     declarations: [
         CarrerasComponent
     ]
 })
-export class DashboardModule {}
+export class CarrerasModule {}
