@@ -5,7 +5,8 @@
   "pregRes": [
               {
                 "alumno": true,
-                "datos": ""
+                "datos": "",
+                "fecha": "d/m/y"
               }],
   "publico": false,
   "positivo" : false
