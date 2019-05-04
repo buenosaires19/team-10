@@ -1,0 +1,13 @@
+[{
+  "id": 1,
+  "idAlumno": 1,
+  "idProfesional": 1,
+  "pregRes": [
+              {
+                "alumno": true,
+                "datos": ""
+              }],
+  "publico": false,
+  "positivo" : false
+
+}]

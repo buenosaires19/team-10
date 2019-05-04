@@ -1,0 +1,10 @@
+[
+  {
+    "nombre": "",
+    "tipo": "admin",
+    "apellido":"" ,
+    "mail": "" ,
+    "id": 1,
+    "contraseña": "12345678"
+  }
+]
