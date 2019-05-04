@@ -27,7 +27,8 @@
               </div>
             </div>
             <div *ngIf="!alumnoLoggueado && !profesional && !admin">
-              <select class="form-control treintaPorciento">
+              <select (change)="onChangeSelect()" id="slcFiltro" class="form-control treintaPorciento">
+                <option value="todas">Todas las categorías</option>
                 <option value="economia">Economía</option>
                 <option value="arte">Arte</option>
                 <option value="tecnologia">Tecnología</option>
@@ -35,16 +36,6 @@
               </select>
               <input class="form-control setentaPorciento" type="text" placeholder="Buscador de preguntas">
             </div>
-          </div>
-          <div *ngIf="!alumnoLoggueado && !profesional">
-            <select (change)="onChangeSelect()" id="slcFiltro" class="form-control treintaPorciento">
-              <option value="todas">Todas las categorías</option>
-              <option value="economia">Economía</option>
-              <option value="arte">Arte</option>
-              <option value="tecnologia">Tecnología</option>
-              <option value="politica">Política</option>
-            </select>
-            <input class="form-control setentaPorciento" type="text" placeholder="Buscador de preguntas">
           </div>
         </div>
         <div class="card-body">
