@@ -15,20 +15,30 @@ export class DashboardComponent implements OnInit {
         this.sliders.push(
             {
                 imagePath: 'assets/images/slider1.jpg',
-                label: 'First slide label',
-                text:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+                label: 'Carerras',
+                text: 'Encuentra la informacion necesaria de tu carrera',
+                link: 'carreras'
             },
             {
                 imagePath: 'assets/images/slider2.jpg',
-                label: 'Second slide label',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                label: 'Test Vocacional',
+                text: 'Descubre tus gustos y orientacion',
+                link: ''
+
             },
             {
                 imagePath: 'assets/images/slider3.jpg',
-                label: 'Third slide label',
-                text:
-                    'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+                label: 'Tips Para Entrevistas',
+                text: 'No te pongas nervioso en tu proxima entrevista',
+                link: 'tips'
+
+            },
+            {
+                imagePath: 'assets/images/slider4.jpg',
+                label: 'Vida de un profesional',
+                text: 'Un dia en la vida de un profesional',
+                link: 'tips'
+
             }
         );
 

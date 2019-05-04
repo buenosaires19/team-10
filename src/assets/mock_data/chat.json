@@ -1,14 +1,22 @@
-[{
-  "id": 1,
-  "idAlumno": 1,
-  "idProfesional": 1,
-  "pregRes": [
-              {
-                "alumno": true,
-                "datos": "",
-                "fecha": "d/m/y"
-              }],
-  "publico": false,
-  "positivo" : false
+[
+  {
+    "id": 1,
+    "idAlumno": 1,
+    "idProfesional": 1,
+    "pregRes": [
+      {
+        "alumno": true,
+        "datos": "Como hago para hacer un curriculum para contabilidad?",
+        "fecha": "d/m/y"
+      },
+      {
+        "alumno": false,
+        "datos": "Lo que tenes que hacer es...",
+        "fecha": "d/m/y"
+      }
 
-}]
+    ],
+    "publico": false,
+    "positivo": false
+  }
+]
