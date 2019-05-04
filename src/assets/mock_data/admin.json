@@ -1,10 +1,10 @@
 [
   {
-    "nombre": "",
-    "tipo": "admin",
-    "apellido":"" ,
-    "mail": "admin@admin.com" ,
+    "nombre": "Jorge",
+    "apellido":"Gimenez",
+    "tipo": "Admin",
+    "mail": "admin@gmail.com" ,
     "id": 1,
-    "contraseña": "12345678"
+    "contrasenia": "123"
   }
 ]
