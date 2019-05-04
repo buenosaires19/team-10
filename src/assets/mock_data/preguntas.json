@@ -1,0 +1,65 @@
+[
+  {
+  "id":0 ,
+  "pregunta": "¿Cuanto gana un contador?",
+  "idAlumno": 1,
+  "idProfesional": 1,
+  "publico": true,
+  "respuesta": "50.000 pesos",
+  "positivo": true
+  },
+  {
+  "id":1 ,
+  "pregunta": "¿Cuanto dura la carrera de Economista?",
+  "idAlumno": 2,
+  "idProfesional": 2,
+  "publico": true,
+  "respuesta": "5 años",
+  "positivo": true
+  },
+  {
+  "id":2 ,
+  "pregunta": "¿Cuanto dura la carrera de Ciencias politicas?",
+  "idAlumno": 2,
+  "idProfesional": 3,
+  "publico": true,
+  "respuesta": "3 años",
+  "positivo": true
+  },
+  {
+  "id":3 ,
+  "pregunta": "¿Cuantos años dura una carrera de ingenieria ?",
+  "idAlumno": 3,
+  "idProfesional": 5,
+  "publico": true,
+  "respuesta": "5 años",
+  "positivo": true
+  },
+  {
+  "id":4 ,
+  "pregunta": "¿Cuantos años dura la carrera de licenciatura en arte"
+  "idAlumno": 3,
+  "idProfesional": 7,
+  "publico": true,
+  "respuesta": "5 años",
+  "positivo": true
+  },
+  {
+  "id":5 ,
+  "pregunta": "¿Que puede esperar uno de la carre de licenciatura en artes?"
+  "idAlumno": 3,
+  "idProfesional": 7,
+  "publico": true,
+  "respuesta": "La carrera universitaria de Licenciatura en Artes forma en las diferentes expresiones artísticas (danza, teatro, música, escultura, pintura, etcétera)",
+  "positivo": true
+  },
+  {
+  "id":6 ,
+  "pregunta": "¿Cuanto dura en promedio la carrera de contador publico?"
+  "idAlumno": 1,
+  "idProfesional": 2,
+  "publico": true,
+  "respuesta": "5 años y medio en promedio.",
+  "positivo": true
+  }
+]
