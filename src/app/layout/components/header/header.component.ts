@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
         this.tipo = localStorage.getItem('tipo');
         this.nombre = localStorage.getItem('nombre');
         this.apellido = localStorage.getItem('apellido');
-        // this.logueado = localStorage.getItem('isLoggedin');
+        this.logueado = localStorage.getItem('isLoggedin');
     }
 
     isToggled(): boolean {
