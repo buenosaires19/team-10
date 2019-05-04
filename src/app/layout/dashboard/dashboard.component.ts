@@ -15,31 +15,25 @@ export class DashboardComponent implements OnInit {
 
     constructor( private data:ActivatedRoute) {
         console.log(this.data.snapshot.params)
+        console.log(Math.round(Math.random()))
         this.sliders.push(
             {
                 imagePath: 'assets/images/slider1.jpg',
                 label: 'Carerras',
                 text: 'Encuentra la informacion necesaria de tu carrera',
-                link: 'carreras'
+                link: '/carreras'
             },
             {
                 imagePath: 'assets/images/slider2.jpg',
                 label: 'Test Vocacional',
                 text: 'Descubre tus gustos y orientacion',
-                link: ''
+                link: '/test'
 
             },
             {
                 imagePath: 'assets/images/slider3.jpg',
                 label: 'Tips Para Entrevistas',
                 text: 'No te pongas nervioso en tu proxima entrevista',
-                link: 'tips'
-
-            },
-            {
-                imagePath: 'assets/images/slider4.jpg',
-                label: 'Vida de un profesional',
-                text: 'Un dia en la vida de un profesional',
                 link: 'tips'
 
             }

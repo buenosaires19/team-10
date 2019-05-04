@@ -19,6 +19,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '50.000 pesos',
     'positivo': true,
     'tipo': 'economia',
+    'categoria': 'Economía',
     'fecha': '12/5/19'
     },
     {
@@ -30,6 +31,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '5 años',
     'positivo': true,
     'tipo': 'economia',
+    'categoria': 'Economía',
     'fecha': '13/1/19'
     },
     {
@@ -41,6 +43,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '3 años',
     'positivo': true,
     'tipo': 'arte',
+    'categoria': 'Arte',
     'fecha': '13/1/19'
     },
     {
@@ -52,6 +55,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '5 años',
     'positivo': true,
     'tipo': 'economia',
+    'categoria': 'Economía',
     'fecha': '6/7/19'
     },
     {
@@ -63,6 +67,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '5 años',
     'positivo': true,
     'tipo': 'politica',
+    'categoria': 'Política',
     'fecha': '6/7/19'
     },
     {
@@ -74,6 +79,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': 'La carrera universitaria de Licenciatura en Artes forma en las diferentes expresiones artísticas',
     'positivo': true,
     'tipo': 'arte',
+    'categoria': 'Arte',
     'fecha': '6/7/19'
     },
     {
@@ -85,6 +91,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '5 años y medio en promedio.',
     'positivo': true,
     'tipo': 'tecnologia',
+    'categoria': 'Tecnología',
     'fecha': '6/7/19'
     }
   ];
@@ -99,11 +106,15 @@ export class PreguntasComponent implements OnInit {
   public preguntasAuxPersonalizado: Array<any> = new Array<any>();
   public profesional = false;
   public alumnoLoggueado = false;
+  public perfil = ''; // profesional
+  public opcionSeleccionada: string;
   public admin = false;
   public tipo: string;
   public showModal = false;
 
   constructor(private actRoute: ActivatedRoute, private modalService: NgbModal) {
+    localStorage.setItem('id', '5');
+    localStorage.setItem('tipo', 'profesional');
     this.tipo = this.actRoute.snapshot.params.tipo;
     for (const p of this.preguntas) {
       if (p.publico) {
@@ -148,9 +159,16 @@ export class PreguntasComponent implements OnInit {
     } else {
       this.preguntas = this.preguntasAuxPublico;
     }
+
+    this.opcionSeleccionada = 'todas';
   }
 
   ngOnInit() {
+  }
+
+  onChangeSelect() {
+    const select = (<HTMLSelectElement> document.getElementById('slcFiltro'));
+    this.opcionSeleccionada = select.options[select.selectedIndex].value;
   }
 
   public GenerarPregunta() {

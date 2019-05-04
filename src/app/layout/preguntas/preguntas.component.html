@@ -36,75 +36,70 @@
               <input class="form-control setentaPorciento" type="text" placeholder="Buscador de preguntas">
             </div>
           </div>
-          <div class="card-body">
-            <ul class="timeline">
-              <ng-container *ngFor="let p of preguntas">
-                <li [class]="p.lado">
-                  <div class="timeline-badge">
-                    <i [class]="p.icono"></i>
-                  </div>
-                  <div class="timeline-panel">
-                    <div class="timeline-heading">
-                      <h4 class="timeline-title">{{p.pregunta}}</h4>
-                      <p><small class="text-muted"><i class="fa fa-clock-o"></i>{{p.fecha}}</small></p>
-                      </div>
-                      <div class="timeline-body" *ngIf="!profesional">
-                        <p>{{p.respuesta}}</p>
-                      </div>
-                      <div class="timeline-body" *ngIf="profesional">
-                        <table style="width: 100%;">
-                          <tr>
-                            <td>
-                              <input type="text" class="form-control" placeholder="Ingrese respuesta:" style="width: 100%;">
-                            </td>
-                            <td>
-                              <button class="btn btn-primary" style="width: 100%;">Enviar</button>
-                            </td>
-                            <td>
-                              <button  class="btn btn-danger button5" shape="round">X</button>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div *ngIf="alumnoLoggueado">
-                        <br>
-                        <table style="width: 100%;">
-                          <tr>
-                            <td>
-                              <button class="btn btn-success button5" shape="round">
-                                <i class="fa fa-thumbs-up"></i>
-                              </button>
-                            </td>
-                            <td>
-                              <button class="btn btn-danger button5" shape="round">
-                                <i class="fa fa-thumbs-down"></i>
-                              </button>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                      <div *ngIf="admin">
-                        <br>
-                        <table style="width: 100%;">
-                          <tr>
-                            <td>
-                              <button class="btn btn-success button5" shape="round">
-                                <i class="fa fa-thumbs-up"></i>
-                              </button>
-                            </td>
-                            <td>
-                              <button class="btn btn-danger button5" shape="round">
-                                <i class="fa fa-thumbs-down"></i>
-                              </button>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                  </div>
-                </li>
-              </ng-container>
-            </ul>
+          <div *ngIf="!alumnoLoggueado && !profesional">
+            <select (change)="onChangeSelect()" id="slcFiltro" class="form-control treintaPorciento">
+              <option value="todas">Todas las categorías</option>
+              <option value="economia">Economía</option>
+              <option value="arte">Arte</option>
+              <option value="tecnologia">Tecnología</option>
+              <option value="politica">Política</option>
+            </select>
+            <input class="form-control setentaPorciento" type="text" placeholder="Buscador de preguntas">
           </div>
+        </div>
+        <div class="card-body">
+          <ul class="timeline">
+            <ng-container *ngFor="let p of preguntas">
+              <ng-container *ngIf="p.tipo == this.opcionSeleccionada || this.opcionSeleccionada == 'todas'">
+              <li [class]="p.lado">
+                <div class="timeline-badge">
+                  <i [class]="p.icono"></i>
+                </div>
+                <div class="timeline-panel"><span class="categoria">{{p.categoria}}</span>
+                  <div class="timeline-heading">
+                    <h4 class="timeline-title">{{p.pregunta}}</h4>
+                    <p><small class="text-muted"><i class="fa fa-clock-o"></i> {{p.fecha}}</small></p>
+                    </div>
+                    <div class="timeline-body" *ngIf="!profesional">
+                      <p>{{p.respuesta}}</p>
+                    </div>
+                    <div class="timeline-body" *ngIf="profesional">
+                      <table style="width: 100%;">
+                        <tr>
+                          <td>
+                            <input type="text" class="form-control" placeholder="Ingrese respuesta:" style="width: 100%;">
+                          </td>
+                          <td>
+                            <button class="btn btn-primary" style="width: 100%;">Enviar</button>
+                          </td>
+                          <td>
+                            <button  class="btn btn-danger button5" shape="round">X</button>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div *ngIf="alumnoLoggueado">
+                      <br>
+                      <table style="width: 100%;">
+                        <tr>
+                          <td>
+                            <button class="btn btn-success button5" shape="round">
+                              <i class="fa fa-thumbs-up"></i>
+                            </button>
+                          </td>
+                          <td>
+                            <button class="btn btn-danger button5" shape="round">
+                              <i class="fa fa-thumbs-down"></i>
+                            </button>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                </div>
+              </li>
+              </ng-container>
+            </ng-container>
+          </ul>
         </div>
       </div>
     </div>
