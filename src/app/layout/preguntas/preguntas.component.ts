@@ -105,7 +105,7 @@ export class PreguntasComponent implements OnInit {
 
   constructor(private actRoute: ActivatedRoute, private modalService: NgbModal) {
     localStorage.setItem('id', '5');
-    localStorage.setItem('tipo', 'admin');
+    localStorage.setItem('tipo', 'profesional');
     this.tipo = this.actRoute.snapshot.params.tipo;
     for (const p of this.preguntas) {
       if (p.publico) {
