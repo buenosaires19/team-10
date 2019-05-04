@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from '../bs-component/components';
 
 @Component({
   selector: 'app-preguntas',
@@ -19,6 +18,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '50.000 pesos',
     'positivo': true,
     'tipo': 'economia',
+    'categoria': 'Economía',
     'fecha': '12/5/19'
     },
     {
@@ -30,6 +30,7 @@ export class PreguntasComponent implements OnInit {
     'respuesta': '5 años',
     'positivo': true,
     'tipo': 'economia',
+    'categoria': 'Economía',
     'fecha': '13/1/19'
     },
     {
@@ -40,7 +41,8 @@ export class PreguntasComponent implements OnInit {
     'publico': true,
     'respuesta': '3 años',
     'positivo': true,
-    'tipo': 'arte',
+    'tipo': 'politica',
+    'categoria': 'Política',
     'fecha': '13/1/19'
     },
     {
@@ -51,18 +53,20 @@ export class PreguntasComponent implements OnInit {
     'publico': true,
     'respuesta': '5 años',
     'positivo': true,
-    'tipo': 'economia',
+    'tipo': 'tecnologia',
+    'categoria': 'Tecnología',
     'fecha': '6/7/19'
     },
     {
     'id': 5 ,
-    'pregunta': '¿Cuantos años dura la carrera de licenciatura en arte',
+    'pregunta': '¿Cuantos años dura la carrera de licenciatura en arte?',
     'idAlumno': 3,
     'idProfesional': 7,
     'publico': true,
     'respuesta': '5 años',
     'positivo': true,
-    'tipo': 'politica',
+    'tipo': 'arte',
+    'categoria': 'Arte',
     'fecha': '6/7/19'
     },
     {
@@ -70,21 +74,23 @@ export class PreguntasComponent implements OnInit {
     'pregunta': '¿Que puede esperar uno de la carre de licenciatura en artes?',
     'idAlumno': 5,
     'idProfesional': 7,
-    'publico': false,
+    'publico': true,
     'respuesta': 'La carrera universitaria de Licenciatura en Artes forma en las diferentes expresiones artísticas',
     'positivo': true,
     'tipo': 'arte',
+    'categoria': 'Arte',
     'fecha': '6/7/19'
     },
     {
-    'id': 5 ,
+    'id': 7 ,
     'pregunta': '¿Cuanto dura en promedio la carrera de contador publico?',
     'idAlumno': 5,
     'idProfesional': 2,
-    'publico': false,
+    'publico': true,
     'respuesta': '5 años y medio en promedio.',
     'positivo': true,
-    'tipo': 'tecnologia',
+    'tipo': 'economia',
+    'categoria': 'Economía',
     'fecha': '6/7/19'
     }
   ];
@@ -99,13 +105,13 @@ export class PreguntasComponent implements OnInit {
   public preguntasAuxPersonalizado: Array<any> = new Array<any>();
   public profesional = false;
   public alumnoLoggueado = false;
+  public perfil = ''; // profesional
+  public opcionSeleccionada: string;
   public admin = false;
   public tipo: string;
   public showModal = false;
 
   constructor(private actRoute: ActivatedRoute, private modalService: NgbModal) {
-    localStorage.setItem('id', '5');
-    localStorage.setItem('tipo', 'profesional');
     this.tipo = this.actRoute.snapshot.params.tipo;
     for (const p of this.preguntas) {
       if (p.publico) {
@@ -131,13 +137,13 @@ export class PreguntasComponent implements OnInit {
           this.preguntasAuxPersonalizado.push(preg);
         }
       }
-      if (perfil === 'usuario') {
+      if (perfil === 'Usuario') {
         this.alumnoLoggueado = true;
         this.preguntas = this.preguntasAuxPersonalizado;
-      } else if (perfil === 'profesional') {
+      } else if (perfil === 'Profesional') {
         this.profesional = true;
         this.preguntas = this.preguntasAuxPersonalizado;
-      } else if (perfil === 'admin') {
+      } else if (perfil === 'Admin') {
         const preguntasAux: Array<any> = new Array<any>();
         for (const preg of this.preguntas) {
           if (!preg.publico) {
@@ -150,9 +156,17 @@ export class PreguntasComponent implements OnInit {
     } else {
       this.preguntas = this.preguntasAuxPublico;
     }
+
+    this.opcionSeleccionada = 'todas';
   }
 
   ngOnInit() {
+  }
+
+  onChangeSelect() {
+    const select = (<HTMLSelectElement> document.getElementById('slcFiltro'));
+    this.opcionSeleccionada = select.options[select.selectedIndex].value;
+    console.log(this.opcionSeleccionada);
   }
 
   public GenerarPregunta() {
