@@ -41,7 +41,7 @@
   },
   {
   "id":5 ,
-  "pregunta": "¿Cuantos años dura la carrera de licenciatura en arte"
+  "pregunta": "¿Cuantos años dura la carrera de licenciatura en arte",
   "idAlumno": 3,
   "idProfesional": 7,
   "publico": true,
@@ -51,7 +51,7 @@
   },
   {
   "id":6 ,
-  "pregunta": "¿Que puede esperar uno de la carre de licenciatura en artes?"
+  "pregunta": "¿Que puede esperar uno de la carre de licenciatura en artes?",
   "idAlumno": 3,
   "idProfesional": 7,
   "publico": true,
@@ -61,7 +61,7 @@
   },
   {
   "id":7 ,
-  "pregunta": "¿Cuanto dura en promedio la carrera de contador publico?"
+  "pregunta": "¿Cuanto dura en promedio la carrera de contador publico?",
   "idAlumno": 1,
   "idProfesional": 2,
   "publico": true,

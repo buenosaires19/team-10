@@ -1,21 +1,36 @@
-<div [@routerTransition]>
+<div>
   <div class="row">
     <div class="col-lg-12">
       <div class="card card-default">
+
+        <!-- Opciones para alumno loggueado en pagina privada para crear chat -->
         <div class="card-header">
-          <div *ngIf="alumnoLoggueado">
-            <button class="btn btn-primary" style="width: 100%;">Generar Chat</button>
+          <div *ngIf="perfil == 'usuario' && privado == 'privada'">
+            <button class="btn btn-primary" style="width: 100%;" (click)="GenerarChat()">Generar Chat</button>
           </div>
-          <div *ngIf="!alumnoLoggueado && !profesional">
-            <select class="form-control treintaPorciento">
-              <option value="economia">Economía</option>
-              <option value="arte">Arte</option>
-              <option value="tecnologia">Tecnología</option>
-              <option value="politica">Política</option>
-            </select>
+          <br>
+          <div class="row" *ngIf="showModal">
+            <div class="col-lg-8" style="text-align: center;">
+              <label>Ingrese categoria:</label>
+              <select class="form-control">
+                <option value="economia">Economía</option>
+                <option value="arte">Arte</option>
+                <option value="tecnologia">Tecnología</option>
+                <option value="politica">Política</option>
+              </select>
+              <br>
+              <button style="width: 50%;" class="btn btn-success">
+                Aceptar
+              </button>
+              <button style="width: 50%;" (click)="Cancelar()" class="btn btn-danger">
+                Cancelar
+              </button>
+            </div>
           </div>
         </div>
-        <div class="card-body">
+
+        <!-- Chats para chats publicos -->
+        <div class="card-body" *ngIf="privado == 'publica' || perfil=='usuario'">
           <ul class="timeline">
             <ng-container *ngFor="let p of chats">
               <div class="chat-panel card card-default">
@@ -69,30 +84,165 @@
                     </div>
                   </ng-container>
                 </ng-container>
-                <!-- /.card-body -->
-                <ng-container *ngIf="tipo != 'admin' && privado == 'privado'">
-                  <div class="card-footer">
-                    <div class="input-group">
-                      <input id="btn-input" type="text" class="form-control input-sm"
-                        placeholder="Type your message here...">
-                      <span class="input-group-btn">
-                        <button class="btn btn-warning btn-sm" id="btn-chat">
-                          Send
-                        </button>
-                      </span>
-                    </div>
-                  </div>
-                </ng-container>
-                <ng-container *ngIf="tipo != 'admin' && privado == 'privado'">
-
-                </ng-container>
-
-                    <!-- /.card-footer -->
               </div>
-              <br>
             </ng-container>
           </ul>
         </div>
+
+        <!-- chats para correccion del admin -->
+        <div class="card-body" *ngIf="perfil == 'admin' && privado == 'privada'">
+            <ul class="timeline">
+              <ng-container *ngFor="let p of chats">
+                <div class="chat-panel card card-default">
+                  <div class="card-header">
+                    <i [class]="p.icono"></i>
+                    Chat
+                  </div>
+                  <ng-container *ngFor="let r of p.pregRes">
+                    <ng-container *ngIf="!r.alumno">
+                      <div class="card-body">
+                        <ul class="chat">
+                          <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                              <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
+                            </span>
+                            <div class="chat-body clearfix">
+                              <div class="header">
+                                <strong class="primary-font">Profesional</strong>
+                                <small class=" text-muted">
+                                  <i class="fa fa-clock-o fa-fw"></i> {{r.hora}}
+                                </small>
+                              </div>
+                              <p>
+                                {{r.datos}}
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </ng-container>
+                    <ng-container *ngIf="r.alumno">
+                      <div class="card-body">
+                        <ul class="chat">
+                          <li class="right clearfix">
+                            <span class="chat-img pull-right">
+                              <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle">
+                            </span>
+                            <div class="chat-body clearfix">
+                              <div class="header">
+                                <small class=" text-muted">
+                                  <i class="fa fa-clock-o fa-fw"></i> {{r.hora}}
+                                </small>
+                                <strong class="pull-right primary-font">Alumno</strong>
+                              </div>
+                              <p class="pull-right" style="float: right;">
+                                {{r.datos}}
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+                </div>
+
+                <div class="form-control col-lg-12">
+                    <br>
+                    <table style="width: 100%;text-align: center;">
+                      <tr>
+                        <td >
+                          <button class="btn btn-success button5" shape="round">
+                            <i class="fa fa-thumbs-up"></i>
+                          </button>
+                        </td>
+                        <td>
+                          <button class="btn btn-danger button5" shape="round">
+                            <i class="fa fa-thumbs-down"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </table>
+                    <br><br>
+                  </div>
+              </ng-container>
+            </ul>
+        </div>
+
+        <!-- chats para que profesional acepte en privada -->
+        <ng-container *ngIf="perfil == 'profesional' && privado == 'privada'">
+          <div class="form-control">
+            <ng-container *ngFor="let p of chats">
+              <div class="chat-panel card card-default">
+                <div class="card-header">
+                  <i [class]="p.icono"></i>Chats para aceptar
+                </div>
+
+                <ng-container *ngFor="let r of p.pregRes">
+                    <ng-container *ngIf="!r.alumno">
+                      <div class="card-body">
+                        <ul class="chat">
+                          <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                              <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle">
+                            </span>
+                            <div class="chat-body clearfix">
+                              <div class="header">
+                                <strong class="primary-font">Profesional</strong>
+                                <small class=" text-muted">
+                                  <i class="fa fa-clock-o fa-fw"></i> {{r.hora}}
+                                </small>
+                              </div>
+                              <p>
+                                {{r.datos}}
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </ng-container>
+                    <ng-container *ngIf="r.alumno">
+                      <div class="card-body">
+                        <ul class="chat">
+                          <li class="right clearfix">
+                            <span class="chat-img pull-right">
+                              <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle">
+                            </span>
+                            <div class="chat-body clearfix">
+                              <div class="header">
+                                <small class=" text-muted">
+                                  <i class="fa fa-clock-o fa-fw"></i> {{r.hora}}
+                                </small>
+                                <strong class="pull-right primary-font">Alumno</strong>
+                              </div>
+                              <p class="pull-right" style="float: right;">
+                                {{r.datos}}
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </ng-container>
+                  </ng-container>
+
+                  <br><br>
+
+                <div class="form-control">
+                  <label class="form-control">Categoría: Economía</label>
+                  <br>
+                  <button style="width: 50%;" class="btn btn-success">
+                    Aceptar Chat
+                  </button>
+                  <button style="width: 50%;" (click)="Cancelar()" class="btn btn-danger">
+                    Rechazar Chat
+                  </button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </ng-container>
+
+
+
       </div>
     </div>
   </div>

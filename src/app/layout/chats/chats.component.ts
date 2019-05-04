@@ -8,8 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./chats.component.scss']
 })
 export class ChatsComponent implements OnInit {
-  privado;
-  chats = [
+  public chats = [
     {
       "id": 1,
       "tipo":"economia",
@@ -111,14 +110,16 @@ export class ChatsComponent implements OnInit {
     { tipo: 'politica', icono: 'fa fa-gavel'}
   ];
   public profesional: boolean;
-  public alumnoLoggueado = false;
   public perfil = '';
-  public admin=false;
+  public admin = false;
+  public privado: string;
+  public showModal = false;
 
-  constructor(private data:ActivatedRoute) {
-    this.perfil = localStorage.getItem('tipo');
+  constructor(private data: ActivatedRoute) {
+    this.perfil =  localStorage.getItem('tipo');
+    this.perfil = this.perfil.toLowerCase();
     this.privado = this.data.snapshot.params.tipo;
-    
+
     let i = 0;
     for (const chat of this.chats) {
       for (const t of this.iconosTipos) {
@@ -127,22 +128,15 @@ export class ChatsComponent implements OnInit {
         }
       }
     }
-    if (this.perfil === 'profesional') {
-      this.profesional = true;
-    } else {
-      this.profesional = false;
-    }
-    if (this.perfil === 'usuario') {
-      this.alumnoLoggueado = true;
-    }
-    if (this.perfil === 'usuario') {
-      this.admin = true;
-    }
-    
-
   }
   ngOnInit() {
   }
 
+  public GenerarChat() {
+    this.showModal = true;
+  }
+  public Cancelar() {
+    this.showModal = false;
+  }
 }
 
