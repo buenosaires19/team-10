@@ -27,14 +27,14 @@ export class DashboardComponent implements OnInit {
                 imagePath: 'assets/images/slider2.jpg',
                 label: 'Test Vocacional',
                 text: 'Descubre tus gustos y orientacion',
-                link: '/test'
+                link: 'https://www.elegircarrera.net/test-vocacional.aspx'
 
             },
             {
                 imagePath: 'assets/images/slider3.jpg',
                 label: 'Tips Para Entrevistas',
                 text: 'No te pongas nervioso en tu proxima entrevista',
-                link: 'tips'
+                link: '/tips'
 
             }
         );
