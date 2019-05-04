@@ -1,10 +1,40 @@
-<div [@routerTransition]>
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="card card-default">
-        <div class="card-header">
-          <div *ngIf="alumnoLoggueado">
-            <button class="btn btn-primary" style="width: 100%;">Generar Pregunta</button>
+<div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card card-default">
+          <div class="card-header">
+            <div *ngIf="alumnoLoggueado">
+              <button class="btn btn-primary" style="width: 100%;" (click)="GenerarPregunta()">Generar Pregunta</button>
+            </div>
+            <br><br>
+            <div class="row" *ngIf="showModal">
+              <div class="col-lg-8" style="text-align: center;">
+                <select class="form-control">
+                  <option value="economia">Economía</option>
+                  <option value="arte">Arte</option>
+                  <option value="tecnologia">Tecnología</option>
+                  <option value="politica">Política</option>
+                </select>
+                <br>
+                <input class="form-control" type="text" placeholder="Ingrese pregunta...">
+                <br>
+                <button style="width: 50%;" class="btn btn-success">
+                  Aceptar
+                </button>
+                <button style="width: 50%;" (click)="Cancelar()" class="btn btn-danger">
+                  Cancelar
+                </button>
+              </div>
+            </div>
+            <div *ngIf="!alumnoLoggueado && !profesional && !admin">
+              <select class="form-control treintaPorciento">
+                <option value="economia">Economía</option>
+                <option value="arte">Arte</option>
+                <option value="tecnologia">Tecnología</option>
+                <option value="politica">Política</option>
+              </select>
+              <input class="form-control setentaPorciento" type="text" placeholder="Buscador de preguntas">
+            </div>
           </div>
           <div *ngIf="!alumnoLoggueado && !profesional">
             <select (change)="onChangeSelect()" id="slcFiltro" class="form-control treintaPorciento">
@@ -74,4 +104,3 @@
       </div>
     </div>
   </div>
-</div>

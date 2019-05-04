@@ -5,6 +5,7 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { PreguntaRoutingModule } from './preguntas-routing.module';
 import { PreguntasComponent } from './preguntas.component';
 import { StatModule } from '../../shared';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
     imports: [
@@ -15,7 +16,11 @@ import { StatModule } from '../../shared';
         StatModule
     ],
     declarations: [
-        PreguntasComponent
+        PreguntasComponent,
+        ModalComponent
+    ],
+    entryComponents: [
+      ModalComponent
     ]
-})
+  })
 export class PreguntasModule {}

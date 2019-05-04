@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
     public logueado: string;
 
     constructor(private translate: TranslateService, public router: Router) {
-        this.logueado = false;
+        this.logueado = 'false';
 
         this.router.events.subscribe(val => {
             if (
