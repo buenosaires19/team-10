@@ -5,7 +5,7 @@
 
         <!-- Opciones para alumno loggueado en pagina privada para crear chat -->
         <div class="card-header">
-          <div *ngIf="perfil == 'usuario' && privado == 'privada'">
+          <div *ngIf="perfil == 'alumno' && privado == 'privada'">
             <button class="btn btn-primary" style="width: 100%;" (click)="GenerarChat()">Generar Chat</button>
           </div>
           <br>
@@ -30,7 +30,7 @@
         </div>
 
         <!-- Chats para chats publicos -->
-        <div class="card-body" *ngIf="privado == 'publica' || perfil=='usuario'">
+        <div class="card-body" *ngIf="privado == 'publica' || perfil=='alumno'">
           <ul class="timeline">
             <ng-container *ngFor="let p of chats">
               <div class="chat-panel card card-default">

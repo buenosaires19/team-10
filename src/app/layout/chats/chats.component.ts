@@ -126,6 +126,7 @@ export class ChatsComponent implements OnInit {
         if (t.tipo === chat.tipo) {
           chat['icono'] = t.icono;
         }
+        console.log(chat)
       }
     }
   }
